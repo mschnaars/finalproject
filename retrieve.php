@@ -2,8 +2,13 @@
 
 require_once('connect.php');
 
-sql query "get path from objects by random limit 1"
+$sql = "SELECT * FROM objects ORDER BY RAND() LIMIT 1";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 
-return path;
+echo "<pre>";
+echo $row['path'];
+echo "</pre>";
 
+$conn->close();
 ?>

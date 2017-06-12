@@ -6,10 +6,6 @@ require_once('connect.php');
 $dir = 'images';
 $files = array_slice(scandir($dir), 3, 20);
 
-//echo "<pre>";
-//print_r($files);
-//echo "</pre>";
-
 foreach($files as $file) {
 	$path = $file;
 	$stmt = $conn->prepare("INSERT INTO `objects` (`path`) VALUES (?)");
