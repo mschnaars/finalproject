@@ -13,10 +13,10 @@
 				Current tags:
 			</p>
 		</div>
-		<form action="script for something" method="post">
+		<form action="addtags.php" method="post">
 			<h3>Add some tagz:</h3>
 			<label for="tags">Tags:</label>
-			<input type="text" value="tags">
+			<input type="text" placeholder="tags" name='tags'>
 			<button type="submit">Submit</button>
 		</form>
 	</body>
