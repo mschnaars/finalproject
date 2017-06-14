@@ -16,7 +16,8 @@
 		<form action="addtags.php" method="post">
 			<h3>Add some tagz:</h3>
 			<label for="tags">Tags:</label>
-			<input type="text" placeholder="tags" name='tags'>
+			<input type="text" placeholder="tags" name="tags">
+			<input type="hidden" value="<?php echo $randomObject; ?>" name="id">
 			<button type="submit">Submit</button>
 		</form>
 	</body>
