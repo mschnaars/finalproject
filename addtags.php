@@ -1,6 +1,7 @@
 <?php
 
 require_once('connect.php');
+include('functions.php');
 
 //Take all inputted tags and turn into an array
 $tags = str_replace(', ', ',', $_POST['tags']);
@@ -26,9 +27,12 @@ foreach($newTags as $tag) {
 }
 
 //Add assoc tags with the submitted image
-
-
-
+foreach($tagArray as $tag) {
+	$tagID = getTagID($tag);
+	$stmt = $conn->prepare("INSERT INTO `objecttags` (`objectID`, `tagID`) VALUES (?, ?)");
+	$stmt->bind_param("ii", $_POST['objectID'], $tagID);
+	$stmt->execute();
+}
 
 $stmt->close();
 $conn->close();
